@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 25px;
+}
+
+h1, form, div {
+    padding-bottom: 15px;
+}
+
+.timeEntry {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 201, 201);
+    text-align: center;
+}
+
+#submit {
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    background: #27ae60;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+#result {
+    font-size: 150%;
+}
