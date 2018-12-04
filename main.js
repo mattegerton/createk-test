@@ -30,42 +30,37 @@ const mins = ["one minute",
     "twenty nine minutes",
     "half"];
 
-// function timeInWords(h, m) {
-//     let result = document.getElementById('result')
-//     let currentHour = hours[h - 1];
-//     let currentMinutes = 0;
-//     if (m > 60 || h > 12) {
-//         result.innerHTML = 'Hours: Please enter a number between 1-12. \n Minutes: Please enter a number between 1-60.'
-//     } else if (m > 30) {
-//         currentMinutes = `${mins[(60 - m) - 1]} to `
-//         currentHour = hours[h]
-//         result.innerHTML = currentMinutes + `${currentHour === undefined ? 'one' : currentHour}`
-//     } else if (m === '00' || m === '0' || m === undefined) {
-//         currentMinutes = ` o' clock`
-//         result.innerHTML = currentHour + currentMinutes
-//     } else {
-//         currentMinutes = `${mins[m - 1]} past `
-//         result.innerHTML = currentMinutes + currentHour
-//     }
-// }
+// COMMENT OUT BELOW FOR TESTING PURPOSES //
 
 function timeInWords(h, m) {
+    let result = document.getElementById('result')
     let currentHour = hours[h - 1];
     let currentMinutes = 0;
     if (m > 60 || h > 12) {
-        return 'Hours: Please enter a number between 1-12. \n Minutes: Please enter a number between 1-60.'
+        result.innerHTML = 'Hours: Please enter a number between 1-12. \n Minutes: Please enter a number between 1-60.'
     } else if (m > 30) {
         currentMinutes = `${mins[(60 - m) - 1]} to `
         currentHour = hours[h]
-        return currentMinutes + `${currentHour === undefined ? 'one' : currentHour}`
+        result.innerHTML = currentMinutes + `${currentHour === undefined ? 'one' : currentHour}`
     } else if (m === '00' || m === '0' || m === undefined) {
         currentMinutes = ` o' clock`
-        return currentHour + currentMinutes
+        result.innerHTML = currentHour + currentMinutes
     } else {
         currentMinutes = `${mins[m - 1]} past `
-        return currentMinutes + currentHour
+        result.innerHTML = currentMinutes + currentHour
     }
 }
+
+document.getElementById("submit").addEventListener("click", function (event) {
+    event.preventDefault()
+    const hours = document.getElementById('hours')
+    const mins = document.getElementById('minutes')
+
+
+    timeInWords(hours.value, mins.value)
+});
+
+// COMMENT OUT ABOVE FOR TESTING PURPOSES //
 
 function validate(evt) {
     let theEvent = evt || window.event;
@@ -83,14 +78,23 @@ function validate(evt) {
     }
 }
 
-// document.getElementById("submit").addEventListener("click", function (event) {
-//     event.preventDefault()
-//     const hours = document.getElementById('hours')
-//     const mins = document.getElementById('minutes')
-
-
-//     timeInWords(hours.value, mins.value)
-// });
-
+// FUNCTION FOR TESTING PURPOSES //
+// function timeInWords(h, m) {
+//     let currentHour = hours[h - 1];
+//     let currentMinutes = 0;
+//     if (m > 60 || h > 12) {
+//         return 'Hours: Please enter a number between 1-12. \n Minutes: Please enter a number between 1-60.'
+//     } else if (m > 30) {
+//         currentMinutes = `${mins[(60 - m) - 1]} to `
+//         currentHour = hours[h]
+//         return currentMinutes + `${currentHour === undefined ? 'one' : currentHour}`
+//     } else if (m === '00' || m === '0' || m === undefined) {
+//         currentMinutes = ` o' clock`
+//         return currentHour + currentMinutes
+//     } else {
+//         currentMinutes = `${mins[m - 1]} past `
+//         return currentMinutes + currentHour
+//     }
+// }
 
 module.exports = { timeInWords }
