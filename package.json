@@ -1,0 +1,23 @@
+{
+  "name": "createk-test",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha ./spec/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattegerton/createk-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattegerton/createk-test/issues"
+  },
+  "homepage": "https://github.com/mattegerton/createk-test#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
