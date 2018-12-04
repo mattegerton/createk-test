@@ -31,3 +31,14 @@ Example Output:
 twenty five minutes to five
 ```
 
+## Tests
+
+
+
+In order to run the test, first comment out the code that is labeled in main.js and use the function that was intended for testing only. Then, in the terminal run:
+
+```
+npm test
+```
+
+
